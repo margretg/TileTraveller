@@ -1,12 +1,10 @@
-userinput('You can travel: ')
-
-
 def movecharacter(position, userinput):
+    """Takes our current position and the user input and returns our new position based on
+    what the user input was"""
     if position == 1:
         if userinput == 'n':
             return position + 1
-        else:
-            pass
+
     if position == 2:
         if userinput == 'n':
             return position + 1
@@ -14,80 +12,70 @@ def movecharacter(position, userinput):
             return position + 3
         elif userinput == 's':
             return position - 1
-        else:
-            pass
 
     if position == 3:
         if userinput == 'e':
             return position + 3
         elif userinput == 's':
             return position - 1
-        else:
-            pass
     if position == 4:
+
         if userinput == 'n':
             return position + 1
-        else:
-            pass
     if position == 5:
+
         if userinput == 'w':
             return position - 3
         elif userinput == 's':
             return position - 1
-        else:
-            pass
     if position == 6:
+
         if userinput == 'w':
             return position - 3
         elif userinput == 'e':
             return position + 3
-        else:
-            pass
     if position == 7:
+
         if userinput == 'n':
             return position + 1
-        else:
-            pass
     if position == 8:
         if userinput == 'n':
             return position + 1
         elif userinput == 's':
             return position - 1
-        else:
-            pass
     if position == 9:
+
         if userinput == 'w':
             return position - 3
         elif userinput == 's':
             return position - 1
-        else:
-            pass
 
 
 def legalmoves(n,s,w,e):
-    '''Takes input as binary numbers and prints if they are true, and if they are true adds them to a binary
-    string and returns that string.'''
-    print("You can travel", end=' ')
+    """Takes input as binary numbers and prints if they are true, and if they are true adds them to a binary
+    string and returns that string."""
+    print("You can travel:", end=' ')
     return_string = '0000'
     if n == 1:
-        print("(N)orth")
+        print("(N)orth", end=' ')
         return_string = '1'+return_string[1:]
     if s == 1:
-        print("(S)outh")
+        print("(S)outh", end=' ')
         return_string = return_string[:1] + '1' + return_string[2:]
     if w == 1:
-        print("(W)est")
+        print("(W)est", end=' ')
         return_string = return_string[:2] + '1' + return_string[3:]
     if e == 1:
-        print("(E)ast")
+        print("(E)ast", end=' ')
         return_string = return_string[:3] + '1'
+    print()
     return return_string
 
 #   main
 
 
 position = 1  # player position
-is_legal = ''
+is_legal = ''  # string to check what routes are available
 while True:
     # print legal positions(north, south, west, east)
     if position == 1:
@@ -116,12 +104,13 @@ while True:
 
     # Checks our input and asks if our position for 'n' equals 1 in our string
     if userinput == 'n' and is_legal[0] == '1':
-        movecharacter(position, userinput)
+        position = movecharacter(position, userinput)
     elif userinput == 's' and is_legal[1] == '1':
-        movecharacter(position, userinput)
+        position = movecharacter(position, userinput)
     elif userinput == 'w' and is_legal[2] == '1':
-        movecharacter(position, userinput)
+        position = movecharacter(position, userinput)
     elif userinput == 'e' and is_legal[3] == '1':
-        movecharacter(position, userinput)
+        position = movecharacter(position, userinput)
     else:
-        print("invalid ")
+        print("Not a valid direction!")
+
