@@ -54,21 +54,30 @@ def movecharacter(position, userinput):
 def legalmoves(n,s,w,e):
     """Takes input as binary numbers and prints if they are true, and if they are true adds them to a binary
     string and returns that string."""
-    print("You can travel:", end=' ')
+    print("You can travel:", end='')
     return_string = '0000'
     if n == 1:
-        print("(N)orth", end=' ')
+        if s == 1 or w == 1 or e == 1:
+            print(" (N)orth", end=' or')
+        else:
+            print(" (N)orth", end='')
         return_string = '1'+return_string[1:]
-    if s == 1:
-        print("(S)outh", end=' ')
-        return_string = return_string[:1] + '1' + return_string[2:]
-    if w == 1:
-        print("(W)est", end=' ')
-        return_string = return_string[:2] + '1' + return_string[3:]
     if e == 1:
-        print("(E)ast", end=' ')
+        if s == 1 or w == 1:
+            print(" (E)ast", end=' or')
+        else:
+            print(" (E)ast", end='')
+        return_string = return_string[:1] + '1' + return_string[2:]
+    if s == 1:
+        if w == 1:
+            print(" (S)outh", end=' or')
+        else:
+            print(" (S)outh", end='')
+        return_string = return_string[:2] + '1' + return_string[3:]
+    if w == 1:
+        print(" (W)est", end='')
         return_string = return_string[:3] + '1'
-    print()
+    print('.')
     return return_string
 
 #   main
@@ -78,6 +87,7 @@ position = 1  # player position
 is_legal = ''  # string to check what routes are available
 while True:
     # print legal positions(north, south, west, east)
+    print(position)
     if position == 1:
         is_legal = legalmoves(1, 0, 0, 0)
     elif position == 2:
@@ -99,18 +109,20 @@ while True:
         is_legal = legalmoves(0, 1, 1, 0)
 
     # Direction control's
-    userinput = str(input("Direction:"))
+    userinput = str(input("Direction: "))
     userinput = userinput.lower()
 
     # Checks our input and asks if our position for 'n' equals 1 in our string
     if userinput == 'n' and is_legal[0] == '1':
         position = movecharacter(position, userinput)
-    elif userinput == 's' and is_legal[1] == '1':
+    elif userinput == 's' and is_legal[2] == '1':
         position = movecharacter(position, userinput)
-    elif userinput == 'w' and is_legal[2] == '1':
+    elif userinput == 'w' and is_legal[3] == '1':
         position = movecharacter(position, userinput)
-    elif userinput == 'e' and is_legal[3] == '1':
+    elif userinput == 'e' and is_legal[1] == '1':
         position = movecharacter(position, userinput)
     else:
         print("Not a valid direction!")
+        userinput = str(input("Direction: "))
+
 
