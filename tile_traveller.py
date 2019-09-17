@@ -1,64 +1,64 @@
-user_input('You can travel: ')
+userinput('You can travel: ')
 
 
-def movecharacter(position):
+def movecharacter(position, userinput):
     if position == 1:
-        if user_input == 'N':
+        if userinput == 'N':
             return position + 1
         else:
             pass
     if position == 2:
-        if user_input == 'N':
+        if userinput == 'N':
             return position + 1
-        elif user_input == 'E':
+        elif userinput == 'E':
             return position + 3
-        elif user_input == 'S':
+        elif userinput == 'S':
             return position - 1
         else:
             pass
 
     if position == 3:
-        if user_input == 'E':
+        if userinput == 'E':
             return position + 3
-        elif user_input == 'S':
+        elif userinput == 'S':
             return position - 1
         else:
             pass
     if position == 4:
-        if user_input == 'N':
+        if userinput == 'N':
             return position + 1
         else:
             pass
     if position == 5:
-        if user_input == 'W':
+        if userinput == 'W':
             return position - 3
-        elif user_input == 'S':
+        elif userinput == 'S':
             return position - 1
         else:
             pass
     if position == 6:
-        if user_input == 'W':
+        if userinput == 'W':
             return position - 3
-        elif user_input == 'E':
+        elif userinput == 'E':
             return position + 3
         else:
             pass
     if position == 7:
-        if user_input == 'N':
+        if userinput == 'N':
             return position + 1
         else:
             pass
     if position == 8:
-        if user_input == 'N':
+        if userinput == 'N':
             return position + 1
-        elif user_input == 'S':
+        elif userinput == 'S':
             return position - 1
         else:
             pass
     if position == 9:
-        if user_input == 'W':
+        if userinput == 'W':
             return position - 3
-        elif user_input == 'S':
+        elif userinput == 'S':
             return position - 1
         else:
             pass
