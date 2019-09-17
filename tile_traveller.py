@@ -3,62 +3,62 @@ userinput('You can travel: ')
 
 def movecharacter(position, userinput):
     if position == 1:
-        if userinput == 'N':
+        if userinput == 'n':
             return position + 1
         else:
             pass
     if position == 2:
-        if userinput == 'N':
+        if userinput == 'n':
             return position + 1
-        elif userinput == 'E':
+        elif userinput == 'e':
             return position + 3
-        elif userinput == 'S':
+        elif userinput == 's':
             return position - 1
         else:
             pass
 
     if position == 3:
-        if userinput == 'E':
+        if userinput == 'e':
             return position + 3
-        elif userinput == 'S':
+        elif userinput == 's':
             return position - 1
         else:
             pass
     if position == 4:
-        if userinput == 'N':
+        if userinput == 'n':
             return position + 1
         else:
             pass
     if position == 5:
-        if userinput == 'W':
+        if userinput == 'w':
             return position - 3
-        elif userinput == 'S':
+        elif userinput == 's':
             return position - 1
         else:
             pass
     if position == 6:
-        if userinput == 'W':
+        if userinput == 'w':
             return position - 3
-        elif userinput == 'E':
+        elif userinput == 'e':
             return position + 3
         else:
             pass
     if position == 7:
-        if userinput == 'N':
+        if userinput == 'n':
             return position + 1
         else:
             pass
     if position == 8:
-        if userinput == 'N':
+        if userinput == 'n':
             return position + 1
-        elif userinput == 'S':
+        elif userinput == 's':
             return position - 1
         else:
             pass
     if position == 9:
-        if userinput == 'W':
+        if userinput == 'w':
             return position - 3
-        elif userinput == 'S':
+        elif userinput == 's':
             return position - 1
         else:
             pass
